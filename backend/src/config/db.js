@@ -11,12 +11,12 @@ const pool = new Pool({
 async function testConnection() {
   try {
     const client = await pool.connect();
-    console.log("✅ Postgres (Supabase) connected successfully");
+    console.log('✅ Postgres (Supabase) connected successfully');
     client.release();
   } catch (err) {
-console.error('❌ Postgres connection failed:');
-console.error(err);
-    process.exit(1);
+    console.error('❌ Postgres connection failed:', err.message);
+    // Re-throw instead of process.exit so serverless functions can recover
+    throw err;
   }
 }
 
