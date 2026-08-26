@@ -1,0 +1,19 @@
+# ── Dependencies ──────────────────────────────────────
+node_modules/
+
+# ── Environment / secrets ─────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── Build output ──────────────────────────────────────
+frontend/dist/
+frontend/build/
+
+# ── Logs ──────────────────────────────────────────────
+npm-debug.log*
+*.log
+
+# ── OS noise ──────────────────────────────────────────
+.DS_Store
+Thumbs.db
